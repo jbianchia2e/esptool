@@ -2126,7 +2126,7 @@ def version(args):
 #
 
 
-def main():
+def main(arguments = sys.argv[1:]):
     parser = argparse.ArgumentParser(description='esptool.py v%s - ESP8266 ROM Bootloader Utility' % __version__, prog='esptool')
 
     parser.add_argument('--chip', '-c',
@@ -2324,7 +2324,7 @@ def main():
 
     expand_file_arguments()
 
-    args = parser.parse_args()
+    args = parser.parse_args(arguments)
 
     print('esptool.py v%s' % __version__)
 
